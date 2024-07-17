@@ -63,7 +63,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
@@ -74,11 +73,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
-
-
-
-
                         <li class="nav-item">
                             <a href="?pg=produk" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -99,10 +93,14 @@
                         </li>
                     </ul>
                 </li>
-
-
-
-
+                <li class="nav-item">
+                    <a href="?pg=setting" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Setting Website
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">EXAMPLES</li>
                 <li class="nav-item">
                     <a href="../calendar.html" class="nav-link">
@@ -110,14 +108,6 @@
                         <p>
                             Calendar
                             <span class="badge badge-info right">2</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
                         </p>
                     </a>
                 </li>
