@@ -69,10 +69,16 @@
                         <p>
                             Master Data
                             <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">3</span>
+                            <span class="badge badge-info right">4</span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="?pg=member" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Member</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="?pg=produk" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
