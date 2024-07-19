@@ -20,26 +20,31 @@ if (isset($_POST['simpan'])) {
         <div class="block">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-8 pb-4">
-                    <form method="post">
-                        <div class="row">
+                    <?php if (isset($_SESSION['id_member'])): ?>
+                        Selamat Datang
+                    <?php else:
+                        ?>
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-black" for="email">Email</label>
+                                <input name="email" type="email" class="form-control" id="email">
+                            </div>
                             <div class="col-12">
+                                <div class="form-group mb-3">
+                                    <label class="text-black" for="lname">Password</label>
+                                    <input name="password" type="text" class="form-control" id="lname">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-black" for="email">Email</label>
-                            <input name="email" type="email" class="form-control" id="email">
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group mb-3">
-                                <label class="text-black" for="lname">Password</label>
-                                <input name="password" type="text" class="form-control" id="lname">
-                            </div>
-                        </div>
-                        <button name="simpan" value="Simpan" type="submit"
-                            class="btn btn-primary-hover-outline">Login</button>
-                        <button name="simpan" value="Simpan" type="submit" class="btn btn-primary-hover-outline"><a
-                                href="?pg=member"></a>Register</button>
-                    </form>
+                            <button name="simpan" value="Simpan" type="submit"
+                                class="btn btn-primary-hover-outline">Login</button>
+                            <button name="simpan" value="Simpan" type="submit" class="btn btn-primary-hover-outline"><a
+                                    href="?pg=member"></a>Register</button>
+                        </form>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
