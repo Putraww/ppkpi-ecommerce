@@ -38,63 +38,37 @@ $queryProduk = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id DESC LIM
                             </tr>
                         </thead>
                         <tbody>
-                            <?php while ($rowProduk = mysqli_fetch_assoc($queryProduk)): ?>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="admin/upload/<?= $rowProduk['foto'] ?>" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black"><?= $rowProduk['nama_barang'] ?></h2>
-                                </td>
-                                <td><?= "Rp." . number_format($rowProduk['harga']) ?></td>
-                                <td>
-                                    <div class="input-group mb-3 d-flex align-items-center quantity-container"
-                                        style="max-width: 120px;">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-black decrease"
-                                                type="button">&minus;</button>
+                            <?php foreach ($_SESSION['cart'] as $item): ?>
+                                <tr>
+                                    <td class="product-thumbnail">
+                                        <img src="admin/upload/<?= $item['foto'] ?>" alt="Image" class="img-fluid">
+                                    </td>
+                                    <td class="product-name">
+                                        <h2 class="h5 text-black"><?= $item['nama_produk'] ?></h2>
+                                    </td>
+                                    <td><?= "Rp." . number_format($item['harga']) ?></td>
+                                    <td>
+                                        <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                            style="max-width: 120px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-black decrease"
+                                                    type="button">&minus;</button>
+                                            </div>
+                                            <input type="text" class="form-control text-center quantity-amount"
+                                                value="<?= $item['qty'] ?>" placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                            </div>
                                         </div>
-                                        <input type="text" class="form-control text-center quantity-amount" value="1"
-                                            placeholder="" aria-label="Example text with button addon"
-                                            aria-describedby="button-addon1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                                        </div>
-                                    </div>
 
-                                </td>
-                                <td><?= "Rp." . number_format($rowProduk['harga']) ?></td>
-                                <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                            </tr>
-                            <?php endwhile ?>
-
-                            <!-- <tr>
-                                <td class="product-thumbnail">
-                                    <img src="images/product-2.png" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black">Product 2</h2>
-                                </td>
-                                <td>$49.00</td>
-                                <td>
-                                    <div class="input-group mb-3 d-flex align-items-center quantity-container"
-                                        style="max-width: 120px;">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-black decrease"
-                                                type="button">&minus;</button>
-                                        </div>
-                                        <input type="text" class="form-control text-center quantity-amount" value="1"
-                                            placeholder="" aria-label="Example text with button addon"
-                                            aria-describedby="button-addon1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                                        </div>
-                                    </div>
-
-                                </td>
-                                <td>$49.00</td>
-                                <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                            </tr> -->
+                                    </td>
+                                    <td><?= "Rp." . number_format($item['harga'] * $item['qty']); ?></td>
+                                    <td><a href="?pg=action-cart&delete-cart=<?= $item['id_produk'] ?>"
+                                            class="btn btn-black btn-sm">X</a></td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
 
@@ -102,14 +76,15 @@ $queryProduk = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id DESC LIM
             </form>
         </div>
 
-        <div class="row">
+        <div class=" row">
             <div class="col-md-6">
                 <div class="row mb-5">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <button class="btn btn-black btn-sm btn-block">Update Cart</button>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+                        <button class="btn btn-outline-black btn-sm btn-block">Continue
+                            Shopping</button>
                     </div>
                 </div>
                 <div class="row">
@@ -153,7 +128,8 @@ $queryProduk = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id DESC LIM
                         <div class="row">
                             <div class="col-md-12">
                                 <button class="btn btn-black btn-lg py-3 btn-block"
-                                    onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                                    onclick="window.location='checkout.html'">Proceed To
+                                    Checkout</button>
                             </div>
                         </div>
                     </div>
