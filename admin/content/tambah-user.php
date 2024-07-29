@@ -32,7 +32,9 @@ if (isset($_POST['edit'])) {
 
     $id = $_GET['edit'];
 
-    $update = mysqli_query($koneksi, "UPDATE user SET nama_lengkap='$nama_lengkap', id_level='$id_level', email='$email', password='$password' WHERE id='$id'");
+    $update = mysqli_query($koneksi, "UPDATE user SET 
+    nama_lengkap='$nama_lengkap', id_level='$id_level', 
+    email='$email', password='$password' WHERE id='$id'");
     header("location:?pg=user&update=berhasi");
 }
 

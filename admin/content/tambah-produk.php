@@ -1,4 +1,5 @@
 <?php
+// $post mengambil nilai input
 // jika tombol simpan di tekan maka mengambil nilai email dan password
 // (!) kebalikan
 if (isset($_POST['simpan'])) {
@@ -18,8 +19,8 @@ if (isset($_POST['simpan'])) {
     }
 
 
-
     // MASUKKAN KE DALAM TABLE USER (FIELD YG AKAN DI MASUKKAN) VALUES (INPUTAN MASING" KOLOM)
+
     $insert = mysqli_query($koneksi, "INSERT INTO barang 
     (nama_barang, harga, foto) VALUES ('$nama_barang', '$harga', '$foto')");
     if (!$insert) {
@@ -53,7 +54,7 @@ if (isset($_POST['edit'])) {
     } else {
         unlink("upload/" . $rowEdit['foto']);
         move_uploaded_file($_FILES['foto']['tmp_name'], "upload/" . $foto);
-        $update = mysqli_fetch_assoc($koneksi, "UPDATE barang SET nama_barang='$nama_barang', harga='$harga', foto='$foto' WHERE id ='$id'");
+        $update = mysqli_fetch_assoc($koneksi, "UPDATE barang SET nama_barang ='$nama_barang', harga ='$harga', foto ='$foto' WHERE id ='$id'");
         header("location:?pg=produk&pesan=tambah-berhasil");
     }
 }

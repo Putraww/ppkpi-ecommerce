@@ -2,9 +2,10 @@
 ob_start();
 //ob_clean();
 session_start();
-if (!isset($_SESSION['nama_lengkap'])) {
-    header("location: login.php? access=failed"); //jika session tidak ada maka akan diarahkan ke halaman login
-}
+
+// if (!isset($_SESSION['nama_lengkap'])) {
+//     header("location: login.php? access=failed"); //jika session tidak ada maka akan diarahkan ke halaman login
+
 include 'koneksi/koneksi.php'; ?>
 <!DOCTYPE html>
 <html lang="en">

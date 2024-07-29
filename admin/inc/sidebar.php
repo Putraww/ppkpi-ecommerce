@@ -86,6 +86,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="?pg=tes-siswa" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tes_Siswa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="?pg=level" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Level</p>
