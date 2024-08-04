@@ -48,9 +48,7 @@ if (isset($_POST['login'])) {
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <?php if (isset($_GET['access'])): ?>
-                    <div class="alert alert-danger">MOHON LOGIN TERLEBIH DAHULU</div>
-                <?php endif; ?>
+
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form action="" method="post">
