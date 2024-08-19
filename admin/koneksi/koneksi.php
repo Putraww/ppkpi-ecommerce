@@ -1,5 +1,5 @@
 <?php
-$host_koneksi = "localhost:3306";
+$host_koneksi = "localhost:3307";
 $user_koneksi = "root";
 $password_koneksi = "";
 $database_koneksi = "db_ecommerce";
